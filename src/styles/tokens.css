@@ -9,7 +9,7 @@
   --color-canvas: #f7f4ee;      /* fondo de la app — warm paper */
   --color-surface: #fdfcf9;     /* cards en reposo */
   --color-elevated: #ffffff;    /* modales, popovers, superficies sobre glass */
-  --color-muted: #ece6d5;       /* superficies sutiles: bg header, badge-neutral, hover */
+  --color-muted: #f3ede0;       /* superficies sutiles: bg header, badge-neutral, hover — recalibrado 2026-08-13 para que no cante contra surface */
   --color-subtle: #e8e3d8;      /* bordes default entre rows */
   --color-line: #d9d3c5;        /* bordes/dividers visibles + separadores */
 
