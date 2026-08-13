@@ -12,4 +12,5 @@ export { Button } from "./components/Button.jsx";
 export { Input, Textarea } from "./components/Input.jsx";
 export { Card } from "./components/Card.jsx";
 export { Badge } from "./components/Badge.jsx";
+export { Tabs } from "./components/Tabs.jsx";
 export { cn } from "./lib/cn.js";

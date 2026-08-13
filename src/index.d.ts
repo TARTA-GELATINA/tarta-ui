@@ -81,6 +81,24 @@ export const Badge: ForwardRefExoticComponent<
   BadgeProps & RefAttributes<HTMLSpanElement>
 >;
 
+// ── Tabs ─────────────────────────────────────────────────
+
+export interface TabDef {
+  id: string;
+  label: ReactNode;
+  count?: number;
+}
+
+export interface TabsProps {
+  tabs: TabDef[];
+  activeId: string;
+  onChange: (id: string) => void;
+  className?: string;
+  size?: "sm" | "md";
+}
+
+export function Tabs(props: TabsProps): JSX.Element;
+
 // ── Utils ────────────────────────────────────────────────
 
 export function cn(
