@@ -24,12 +24,11 @@ export function PageHeader({ title, eyebrow, className, children }) {
   return (
     <header className={cn("flex-shrink-0", className)}>
       {/* Padding con style inline en lugar de Tailwind clases — así
-          NO depende de que Tailwind escanee node_modules del paquete
-          para compilar pt-12/pt-16. Se aplica siempre.
-          Espaciado matcheando la app Campaigns de tarta-hub. */}
+          NO depende de que Tailwind escanee node_modules del paquete.
+          Matches Campaigns visualmente. */}
       <div
         className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 sm:px-6 md:px-10"
-        style={{ paddingTop: "clamp(48px, 6vh, 72px)", paddingBottom: "16px" }}
+        style={{ paddingTop: "32px", paddingBottom: "16px" }}
       >
         <div className="min-w-0 flex-1">
           {eyebrow && (
