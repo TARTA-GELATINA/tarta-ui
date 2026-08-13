@@ -99,6 +99,17 @@ export interface TabsProps {
 
 export function Tabs(props: TabsProps): JSX.Element;
 
+// ── PageHeader ───────────────────────────────────────────
+
+export interface PageHeaderProps {
+  title: ReactNode;
+  eyebrow?: ReactNode;
+  className?: string;
+  children?: ReactNode;
+}
+
+export function PageHeader(props: PageHeaderProps): JSX.Element;
+
 // ── Utils ────────────────────────────────────────────────
 
 export function cn(
