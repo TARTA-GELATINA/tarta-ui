@@ -1,6 +1,6 @@
 {
   "name": "@tarta/ui",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Design system compartido del suite Tarta. Tokens + primitives React + fonts.",
   "private": true,
   "type": "module",

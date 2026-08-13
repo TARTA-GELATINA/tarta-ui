@@ -33,7 +33,7 @@ export const Checkbox = forwardRef(function Checkbox(
         className
       )}
     >
-      <span className="relative inline-flex h-4 w-4 shrink-0 items-center justify-center">
+      <span className="relative inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center">
         <input
           ref={ref}
           id={inputId}
@@ -41,19 +41,19 @@ export const Checkbox = forwardRef(function Checkbox(
           checked={!!checked}
           onChange={(e) => onChange?.(e.target.checked)}
           disabled={disabled}
-          className="peer absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-[4px] border-[0.5px] border-[var(--color-line)] bg-[var(--color-surface)] outline-none transition-all checked:border-[var(--text-primary)] checked:bg-[var(--text-primary)] focus-visible:shadow-[var(--shadow-focus)] disabled:cursor-not-allowed"
+          className="peer absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-md border-[1.5px] border-[var(--color-line)] bg-[var(--color-surface)] outline-none transition-all hover:border-[var(--text-muted)] checked:border-[var(--text-primary)] checked:bg-[var(--text-primary)] focus-visible:shadow-[var(--shadow-focus)] disabled:cursor-not-allowed"
           {...rest}
         />
         <svg
           viewBox="0 0 16 16"
           fill="none"
           aria-hidden
-          className="pointer-events-none relative h-3 w-3 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          className="pointer-events-none relative h-[13px] w-[13px] text-white opacity-0 transition-opacity peer-checked:opacity-100"
         >
           <path
             d="M3.5 8.5 6.5 11.5 12.5 5"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.25"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
