@@ -33,7 +33,7 @@ export const Checkbox = forwardRef(function Checkbox(
         className
       )}
     >
-      <span className="relative inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center">
+      <span className="relative inline-flex h-5 w-5 shrink-0 items-center justify-center">
         {/* Input real oculto (sr-only) pero interactivo. accent-color
             del navegador se ignora porque el input no se ve. */}
         <input
@@ -46,22 +46,23 @@ export const Checkbox = forwardRef(function Checkbox(
           className="peer sr-only"
           {...rest}
         />
-        {/* Cuadrado visual — sigue el estado del peer input */}
+        {/* Cuadrado visual — sigue el estado del peer input.
+            Look pro tipo Campaigns/Linear: 20px, radius 6px, border
+            2px, checked slate-900 con check white. */}
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-md border-[1.5px] border-[var(--color-line)] bg-[var(--color-surface)] transition-all peer-hover:border-[var(--text-muted)] peer-checked:border-[var(--text-primary)] peer-checked:bg-[var(--text-primary)] peer-focus-visible:shadow-[var(--shadow-focus)]"
+          className="pointer-events-none absolute inset-0 rounded-md border-2 border-[var(--color-line)] bg-[var(--color-surface)] transition-all peer-hover:border-[var(--text-muted)] peer-checked:border-[var(--text-primary)] peer-checked:bg-[var(--text-primary)] peer-focus-visible:shadow-[var(--shadow-focus)]"
         />
-        {/* Check icon — visible solo cuando el peer input está checked */}
         <svg
-          viewBox="0 0 16 16"
+          viewBox="0 0 20 20"
           fill="none"
           aria-hidden
-          className="pointer-events-none relative h-[13px] w-[13px] text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          className="pointer-events-none relative h-[14px] w-[14px] text-white opacity-0 transition-opacity peer-checked:opacity-100"
         >
           <path
-            d="M3.5 8.5 6.5 11.5 12.5 5"
+            d="M4.5 10.5 8 14 15.5 6"
             stroke="currentColor"
-            strokeWidth="2.5"
+            strokeWidth="2.75"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
