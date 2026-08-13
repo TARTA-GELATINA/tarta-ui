@@ -8,6 +8,7 @@
 
 import type {
   ButtonHTMLAttributes,
+  CSSProperties,
   ElementType,
   ForwardRefExoticComponent,
   HTMLAttributes,
@@ -125,6 +126,23 @@ export interface CheckboxProps {
 export const Checkbox: ForwardRefExoticComponent<
   CheckboxProps & RefAttributes<HTMLInputElement>
 >;
+
+// ── Skeleton ─────────────────────────────────────────────
+
+export interface SkeletonProps {
+  variant?: "line" | "card" | "block";
+  className?: string;
+  style?: CSSProperties;
+}
+
+export function Skeleton(props: SkeletonProps): JSX.Element;
+
+export interface SkeletonKanbanProps {
+  columns?: number;
+  cardsPerColumn?: number;
+}
+
+export function SkeletonKanban(props?: SkeletonKanbanProps): JSX.Element;
 
 // ── Utils ────────────────────────────────────────────────
 
