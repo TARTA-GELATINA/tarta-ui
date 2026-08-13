@@ -34,6 +34,8 @@ export const Checkbox = forwardRef(function Checkbox(
       )}
     >
       <span className="relative inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center">
+        {/* Input real oculto (sr-only) pero interactivo. accent-color
+            del navegador se ignora porque el input no se ve. */}
         <input
           ref={ref}
           id={inputId}
@@ -41,9 +43,15 @@ export const Checkbox = forwardRef(function Checkbox(
           checked={!!checked}
           onChange={(e) => onChange?.(e.target.checked)}
           disabled={disabled}
-          className="peer absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-md border-[1.5px] border-[var(--color-line)] bg-[var(--color-surface)] outline-none transition-all hover:border-[var(--text-muted)] checked:border-[var(--text-primary)] checked:bg-[var(--text-primary)] focus-visible:shadow-[var(--shadow-focus)] disabled:cursor-not-allowed"
+          className="peer sr-only"
           {...rest}
         />
+        {/* Cuadrado visual — sigue el estado del peer input */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-md border-[1.5px] border-[var(--color-line)] bg-[var(--color-surface)] transition-all peer-hover:border-[var(--text-muted)] peer-checked:border-[var(--text-primary)] peer-checked:bg-[var(--text-primary)] peer-focus-visible:shadow-[var(--shadow-focus)]"
+        />
+        {/* Check icon — visible solo cuando el peer input está checked */}
         <svg
           viewBox="0 0 16 16"
           fill="none"
@@ -53,7 +61,7 @@ export const Checkbox = forwardRef(function Checkbox(
           <path
             d="M3.5 8.5 6.5 11.5 12.5 5"
             stroke="currentColor"
-            strokeWidth="2.25"
+            strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
