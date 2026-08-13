@@ -110,6 +110,22 @@ export interface PageHeaderProps {
 
 export function PageHeader(props: PageHeaderProps): JSX.Element;
 
+// ── Checkbox ─────────────────────────────────────────────
+
+export interface CheckboxProps {
+  label?: ReactNode;
+  checked?: boolean;
+  onChange?: (checked: boolean) => void;
+  disabled?: boolean;
+  className?: string;
+  id?: string;
+  name?: string;
+}
+
+export const Checkbox: ForwardRefExoticComponent<
+  CheckboxProps & RefAttributes<HTMLInputElement>
+>;
+
 // ── Utils ────────────────────────────────────────────────
 
 export function cn(
