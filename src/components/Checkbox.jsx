@@ -51,7 +51,7 @@ export const Checkbox = forwardRef(function Checkbox(
             2px, checked slate-900 con check white. */}
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-md border-2 border-[var(--color-line)] bg-[var(--color-surface)] transition-all peer-hover:border-[var(--text-muted)] peer-checked:border-[var(--text-primary)] peer-checked:bg-[var(--text-primary)] peer-focus-visible:shadow-[var(--shadow-focus)]"
+          className="pointer-events-none absolute inset-0 rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] transition-all peer-hover:border-[var(--text-muted)] peer-checked:border-[var(--text-primary)] peer-checked:bg-[var(--text-primary)] peer-focus-visible:shadow-[var(--shadow-focus)]"
         />
         <svg
           viewBox="0 0 20 20"
