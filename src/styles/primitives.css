@@ -1,0 +1,290 @@
+/* =========================================================================
+   @tarta/ui · Primitives
+   Utility classes que consume el layer React de components/.
+   Aplicables también directamente en JSX sin importar los componentes React.
+   ========================================================================= */
+
+/* ── Base ────────────────────────────────────────────────────────────── */
+
+.tui-body-base {
+  background: var(--color-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv02", "cv11", "ss01";
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgb(15 118 110 / 0.2);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out-quart),
+              color var(--dur-fast) var(--ease-out-quart),
+              border-color var(--dur-fast) var(--ease-out-quart),
+              transform var(--dur-instant) var(--ease-out-quart);
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-primary {
+  background: var(--text-primary);
+  color: white;
+}
+.btn-primary:hover { background: #1e293b; }
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--text-primary);
+  border: 0.5px solid var(--color-line);
+}
+.btn-secondary:hover { background: var(--color-muted); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+.btn-ghost:hover {
+  background: var(--color-muted);
+  color: var(--text-primary);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 0.5px solid var(--color-line);
+}
+.btn-outline:hover { background: var(--color-muted); }
+.btn-danger {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border: 0.5px solid var(--danger-border);
+}
+.btn-danger:hover { background: color-mix(in srgb, var(--danger-bg) 85%, var(--danger) 15%); }
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+.btn-sm { padding: 4px 10px; font-size: 12px; }
+.btn-lg { padding: 8px 16px; font-size: 16px; }
+
+/* ── Card ────────────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--color-surface);
+  border: 0.5px solid var(--color-subtle);
+  border-radius: var(--radius-lg);
+  transition: box-shadow var(--dur-fast) var(--ease-out-quart),
+              border-color var(--dur-fast) var(--ease-out-quart);
+}
+.card-hover:hover {
+  box-shadow: var(--shadow-pop);
+  border-color: var(--color-line);
+}
+.card-premium {
+  background: var(--color-elevated);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ── Input / Textarea ────────────────────────────────────────────────── */
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 6px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--text-primary);
+  border: 0.5px solid var(--color-line);
+  transition: border-color var(--dur-fast) var(--ease-out-quart),
+              box-shadow var(--dur-fast) var(--ease-out-quart);
+}
+.input::placeholder,
+.textarea::placeholder { color: var(--text-muted); }
+.input:hover,
+.textarea:hover { border-color: var(--text-muted); }
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-focus);
+}
+.input:disabled,
+.textarea:disabled {
+  background: var(--color-muted);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+.textarea { resize: vertical; min-height: 72px; }
+
+/* ── Badge (color pill, static) ─────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+}
+.badge-neutral {
+  background: var(--color-muted);
+  color: var(--text-secondary);
+  border: 0.5px solid var(--color-line);
+}
+.badge-accent {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  border: 0.5px solid var(--accent-border);
+}
+.badge-success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 0.5px solid var(--success-border);
+}
+.badge-warning {
+  background: var(--warning-bg);
+  color: var(--warning-text);
+  border: 0.5px solid var(--warning-border);
+}
+.badge-danger {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border: 0.5px solid var(--danger-border);
+}
+.badge-info {
+  background: var(--info-bg);
+  color: var(--info-text);
+  border: 0.5px solid var(--info-border);
+}
+
+/* ── Chip (interactive pill with dot) ───────────────────────────────── */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  transition: background-color var(--dur-fast) var(--ease-out-quart);
+}
+.chip-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* ── Kbd ─────────────────────────────────────────────────────────────── */
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 22px;
+  padding: 0 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+  background: var(--color-surface);
+  color: var(--text-secondary);
+  border: 0.5px solid var(--color-line);
+  box-shadow: 0 1px 0 0 var(--color-line);
+}
+
+/* ── Eyebrow ─────────────────────────────────────────────────────────── */
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.eyebrow-lg {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+}
+
+/* ── Glass (acento — solo en floating chrome) ────────────────────────── */
+
+.glass {
+  background: rgba(253, 252, 249, 0.72);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 0.5px solid var(--color-subtle);
+}
+.glass-strong {
+  background: rgba(253, 252, 249, 0.85);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 0.5px solid var(--color-line);
+}
+
+/* ── Scrollbar sutil ─────────────────────────────────────────────────── */
+
+.scroll-subtle {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+.scroll-subtle::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-subtle::-webkit-scrollbar-track { background: transparent; }
+.scroll-subtle::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: var(--radius-pill);
+}
+.scroll-subtle::-webkit-scrollbar-thumb:hover { background: #c4bda9; }
+
+/* ── Utilities ───────────────────────────────────────────────────────── */
+
+.tui-num { font-variant-numeric: tabular-nums; }
+
+.divider {
+  height: 0.5px;
+  background: var(--color-line);
+}
+
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

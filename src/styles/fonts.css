@@ -1,0 +1,8 @@
+/* =========================================================================
+   @tarta/ui · Fonts
+   Inter (sans, body), Fraunces (serif, hero only), JetBrains Mono (mono).
+   Servidas desde Google Fonts. Las apps Next pueden preferir next/font
+   para carga optimizada — este archivo es el fallback universal.
+   ========================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap");

@@ -1,0 +1,5 @@
+/* @tarta/ui — bundle único que importa todo. Un solo import por app. */
+
+@import "./fonts.css";
+@import "./tokens.css";
+@import "./primitives.css";
