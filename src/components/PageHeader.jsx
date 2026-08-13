@@ -22,13 +22,7 @@ import { cn } from "../lib/cn.js";
  */
 export function PageHeader({ title, eyebrow, className, children }) {
   return (
-    <header
-      className={cn("flex-shrink-0", className)}
-      style={{
-        background: "var(--color-surface)",
-        borderBottom: "0.5px solid var(--color-subtle)",
-      }}
-    >
+    <header className={cn("flex-shrink-0", className)}>
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6 md:px-10">
         <div className="min-w-0 flex-1">
           {eyebrow && (
